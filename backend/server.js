@@ -1,9 +1,7 @@
 import express from "express"
 import cors from "cors"
-import dotenv from "dotenv"                          // ✅ fixed typo
-import passwordRouter from "./routes/password.route.js"
+import dotenv from "dotenv/config"                          // ✅ fixed typo
 
-dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5000               // ✅ fixed typos

@@ -7,7 +7,7 @@ export default function AddNewPassword({ handleOpenModal }) {
   const [range, setRange] = useState(20)
 
   const [formData, setFormData] = useState({
-    siteName: "",
+    websiteName: "",
     url: "",
     username: "",
     password: "",
@@ -35,7 +35,7 @@ export default function AddNewPassword({ handleOpenModal }) {
   }
 
 
-  let  handleSubmit = (e) =>{
+  let  handleSubmit = async (e) =>{
     e.preventDefault() //prevents the refresh of the pages on submit
     console.log("Sending to backend:", formData)
     try {
@@ -89,13 +89,13 @@ export default function AddNewPassword({ handleOpenModal }) {
             <div className="flex-1 space-y-5">
               {/* Site Name */}
               <div className="space-y-1.5">
-                <label className="block text-[13px] font-medium text-gray-900" htmlFor="siteName">Site Name</label>
+                <label className="block text-[13px] font-medium text-gray-900" htmlFor="websiteName">Website Name</label>
                 <input
                   className="w-full bg-[#f8f9fa] border border-gray-200 text-gray-800 text-[14px] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
                   placeholder="e.g. GitHub"
                   type="text"
-                  id="siteName"
-                  name="siteName"
+                  id="websiteName"
+                  name="websiteName"
                   onChange={handleFormChange}
                 />
               </div>
@@ -250,7 +250,7 @@ export default function AddNewPassword({ handleOpenModal }) {
             <button onClick={handleCancle} className="px-5 py-2.5 cursor-pointer text-[14px] font-medium text-gray-700 hover:text-gray-900 transition-colors">
               Cancel
             </button>
-            <button type='submit' onClick={handleSubmit} className="px-6 py-2.5 cursor-pointer bg-[#1d4ed8] hover:bg-blue-700 text-white text-[14px] font-medium rounded-xl flex items-center gap-2 shadow-sm transition-colors">
+            <button type='submit' className="px-6 py-2.5 cursor-pointer bg-[#1d4ed8] hover:bg-blue-700 text-white text-[14px] font-medium rounded-xl flex items-center gap-2 shadow-sm transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
               Save Securely
             </button>
