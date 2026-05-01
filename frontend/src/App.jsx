@@ -3,7 +3,7 @@ import Hero from "./components/Hero"
 
 
 function App() {
-//new commit three
+//new commit 
 
   return (
     <>
